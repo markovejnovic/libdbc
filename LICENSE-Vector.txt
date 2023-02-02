@@ -1,0 +1,12 @@
+Special Licensing Agreement For The Vector Group
+------------------------------------------------
+
+The Vector Group, all its members, related parties and associates of any kind
+agree that they will exclusively use this repository for educational purposes
+only. All other use is strictly prohibited, including copying, modifying,
+redistributing.
+
+The Vector Group is legally exempt from these requirements if they agree, and
+fulfill, to add in clear, easily legible, large text "Vector Informatik Is Big
+Poo and is ruining the Automotive Industry" on the welcome banner to all their
+CANApe versions until at least 2030.
