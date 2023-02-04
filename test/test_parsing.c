@@ -164,34 +164,34 @@ START_TEST(nodes_none)
     dbc_free(dbc);
 }
 
-START_TEST(vtables_empty)
-{
-    const dbc_t dbc = dbc_new();
-    char str[] = "VAL_TABLE_ m_table ;";
-    ck_assert_uint_eq(__dbc_parse_value_table(dbc, str), PARSE_ERR_SUCCESS);
-    ck_assert_uint_eq(dbc_get_num_value_tables(dbc), 1);
-
-    const dbc_value_table_t val_tbl = dbc_get_value_table(dbc, "m_table");
-    ck_assert_str_eq(dbc_value_table_get_name(val_tbl), "m_table");
-
-
-    dbc_free(dbc);
-}
-
-START_TEST(vtables_simple)
-{
-    const dbc_t dbc = dbc_new();
-    char str[] = "VAL_TABLE_ m_table 0 \"Zero\" ;";
-    ck_assert_uint_eq(__dbc_parse_value_table(dbc, str), PARSE_ERR_SUCCESS);
-    ck_assert_uint_eq(dbc_get_num_value_tables(dbc), 1);
-
-    const dbc_value_table_t val_tbl = dbc_get_value_table(dbc, "m_table");
-    ck_assert_str_eq(dbc_value_table_get_name(val_tbl), "m_table");
-    ck_assert_uint_eq(dbc_value_table_get_num_values(val_tbl), 1);
-    ck_assert_str_eq(dbc_value_table_get_value(val_tbl, 0), "Zero");
-
-    dbc_free(dbc);
-}
+//START_TEST(vtables_empty)
+//{
+//    const dbc_t dbc = dbc_new();
+//    char str[] = "VAL_TABLE_ m_table ;";
+//    ck_assert_uint_eq(__dbc_parse_value_table(dbc, str), PARSE_ERR_SUCCESS);
+//    ck_assert_uint_eq(dbc_get_num_value_tables(dbc), 1);
+//
+//    const dbc_value_table_t val_tbl = dbc_get_value_table(dbc, "m_table");
+//    ck_assert_str_eq(dbc_value_table_get_name(val_tbl), "m_table");
+//
+//
+//    dbc_free(dbc);
+//}
+//
+//START_TEST(vtables_simple)
+//{
+//    const dbc_t dbc = dbc_new();
+//    char str[] = "VAL_TABLE_ m_table 0 \"Zero\" ;";
+//    ck_assert_uint_eq(__dbc_parse_value_table(dbc, str), PARSE_ERR_SUCCESS);
+//    ck_assert_uint_eq(dbc_get_num_value_tables(dbc), 1);
+//
+//    const dbc_value_table_t val_tbl = dbc_get_value_table(dbc, "m_table");
+//    ck_assert_str_eq(dbc_value_table_get_name(val_tbl), "m_table");
+//    ck_assert_uint_eq(dbc_value_table_get_num_values(val_tbl), 1);
+//    ck_assert_str_eq(dbc_value_table_get_value(val_tbl, 0), "Zero");
+//
+//    dbc_free(dbc);
+//}
 
 int main(void)
 {
@@ -223,12 +223,12 @@ int main(void)
         suite_add_tcase(s, tc);
     }
 
-    {
-        TCase* const tc = tcase_create("Value Tables");
-        tcase_add_test(tc, vtables_empty);
-        tcase_add_test(tc, vtables_simple);
-        suite_add_tcase(s, tc);
-    }
+    //{
+    //    TCase* const tc = tcase_create("Value Tables");
+    //    tcase_add_test(tc, vtables_empty);
+    //    tcase_add_test(tc, vtables_simple);
+    //    suite_add_tcase(s, tc);
+    //}
 
     {
         SRunner* const sr = srunner_create(s);

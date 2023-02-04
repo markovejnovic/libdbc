@@ -1,63 +1,15 @@
 #ifndef __LIBDBC__
 #define __LIBDBC__
 
-#include <stdlib.h>
+#include "libdbc_node.h"
+#include "libdbc_value_table.h"
+#include <stdbool.h>
 
 /**
  * @typedef dbc_t
  * @brief The DBC file RAM representation.
  */
 typedef struct dbc* dbc_t;
-
-/**
- * @typedef dbc_node_t
- * @brief A DBC Node Definition
- */
-typedef struct dbc_node* dbc_node_t;
-
-/**
- * @brief Creates a new, empty DBC Node structure.
- */
-dbc_node_t dbc_node_new(const char* name);
-
-/**
- * @brief Frees up the memory used by the DBC.
- */
-void dbc_node_free(const dbc_node_t node);
-
-/**
- * @return char* The name of the node
- */
-const char* dbc_node_get_name(const dbc_node_t dbc_node);
-
-/**
- * @brief Sets the DBC node name
- */
-void dbc_node_set_name(dbc_node_t dbc_node, const char* const name);
-
-/**
- * @typedef dbc_value_table_t
- * @brief The DBC Value Table Definition
- */
-typedef struct dbc_value_table* dbc_value_table_t;
-
-dbc_value_table_t dbc_value_table_new(const char*);
-void dbc_value_table_free(const dbc_value_table_t);
-void dbc_value_table_set_name(dbc_value_table_t, const char*);
-const char* dbc_value_table_get_name(dbc_value_table_t);
-
-/**
- * @brief Adds a new value pair.
- *
- * @param tbl The DBC Value Table
- * @param num The value number
- * @param desc The description of the value
- */
-void dbc_value_table_insert(dbc_value_table_t tbl, const size_t num,
-                            const char* desc);
-
-size_t dbc_value_table_get_num_values(dbc_value_table_t val);
-const char* dbc_value_table_get_value(dbc_value_table_t tbl, const double val);
 
 /**
  * @typedef dbc_message_t

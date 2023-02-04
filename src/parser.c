@@ -45,7 +45,7 @@ static parse_err_t __dbc_parse_version(dbc_t dbc, char* str) {
     // Empty version string if <VERSION "">
     if (unlikely(*content_begin == '"'))
     {
-        dbc_set_version(dbc, "");
+        dbc_set_version(dbc, PARSE_VERSION_DEFAULT);
         return PARSE_ERR_SUCCESS;
     }
 

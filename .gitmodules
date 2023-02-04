@@ -1,0 +1,12 @@
+[submodule "lib/hashmap.c"]
+	path = lib/hashmap.c
+	url = https://github.com/tidwall/hashmap.c.git
+[submodule "lib/hashmap"]
+	path = lib/hashmap
+	url = https://github.com/tidwall/hashmap.c.git
+[submodule "lib/sds"]
+	path = lib/sds
+	url = https://github.com/antirez/sds.git
+[submodule "lib/hashtable"]
+	path = lib/hashtable
+	url = git@github.com:markovejnovic/chashtable.git
